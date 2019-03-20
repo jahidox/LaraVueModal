@@ -17,13 +17,15 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Type</th>
+                    <th>Registered at</th>
                     <th>Actions</th>
                   </tr>
-                  <tr>
-                    <td>183</td>
-                    <td>John Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-success">Approved</span></td>
+                  <tr v-for="user in users" :key="user.id">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.type | upText }}</td>
+                    <td>{{ user.created_at | myDate }}</td>
                     <td>
                         <a href=""> <i class="fa fa-edit"></i> </a> |
                         <a href="">  <i class="fa fa-trash text-red"></i> </a>
@@ -104,6 +106,7 @@
     export default {
         data(){
           return{
+            users: {},
             form: new Form({
               name: '',
               email: '',
@@ -116,11 +119,32 @@
         },
         methods: {
           createUser(){
-            this.form.post('api/user')
+            this.$Progress.start();
+            this.form.post('api/user');
+            $('#addNew').modal('hide')
+            toast.fire({
+              type: 'success',
+              title: 'User created in successfully'
+            });
+            this.loadUsers();
+            this.$Progress.finish();
+          },
+          loadUsers(){
+              //axios.get("api/user").then(({ data }) => (this.users = data.data));
+
+              var that = this;
+              axios.get("api/user")
+              .then(function ({data}) {
+                that.users = data.data;
+              })
+              .catch(function (error) {
+                console.log(error);
+              })
           }
         },
         mounted() {
-            console.log('Component mounted.')
+            this.loadUsers();
+            //setInterval(()=> this.loadUsers(), 3000);
         }
     }
 </script>
