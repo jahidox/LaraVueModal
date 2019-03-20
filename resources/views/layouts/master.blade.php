@@ -137,6 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="mt-4">
 
           <router-view></router-view>
+          <vue-progress-bar></vue-progress-bar>
 
         </div>
       </div><!-- /.container-fluid -->
@@ -150,10 +151,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      Laravel - Vuejs - Modals
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2019 </strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

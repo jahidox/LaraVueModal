@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
 
     public function index() {
-        //
+        return User::latest()->paginate(5);
     }
 
     public function store(Request $request){
