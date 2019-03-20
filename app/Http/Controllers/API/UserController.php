@@ -42,6 +42,6 @@ class UserController extends Controller
     }
 
     public function destroy($id){
-        //
+        //Prueba desde otra cuenta de github
     }
 }
