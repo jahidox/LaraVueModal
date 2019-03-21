@@ -77766,8 +77766,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\LARAVEL_PRAC\LaraVueModal\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\LARAVEL_PRAC\LaraVueModal\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\laravel_prac\laravuemodal\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel_prac\laravuemodal\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
